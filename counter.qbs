@@ -34,4 +34,13 @@ Application {
         qbs.install: true
         qbs.installDir: "bin"
     }
+
+    Group {
+        name: "game"
+        files: [
+            "mycounter.exe"
+        ]
+        qbs.install:true
+        qbs.installDir: "bin"
+    }
 }
