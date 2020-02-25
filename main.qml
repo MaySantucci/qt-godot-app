@@ -1,23 +1,22 @@
 import QtQuick 2.14
 import QtQuick.Window 2.14
+import QtQuick.Controls 2.14
 
 import MyModel 1.0
+import GameProcess 1.0
 
 Window {
     visible: true
-    width: 1920
-    height: 960
+    width: 400
+    height: 760
     title: qsTr("Hello World")
 
-    ListView {
-        anchors.fill: parent
+    GameProcess {
+        id: game
+    }
 
-        model: ScoreModel{
-
-        }
-
-        delegate: Text {
-            text: score
-        }
+    Button {
+        text: qsTr("start")
+        onClicked: game.startGame()
     }
 }

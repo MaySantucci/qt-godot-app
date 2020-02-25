@@ -22,6 +22,8 @@ Application {
     ]
 
     files: [
+        "gameprocess.cpp",
+        "gameprocess.h",
         "main.cpp",
         "main.qml",
         "qml.qrc",
@@ -38,7 +40,8 @@ Application {
     Group {
         name: "game"
         files: [
-            "mycounter.exe"
+            "my_counter.exe",
+            "my_counter.pck",
         ]
         qbs.install:true
         qbs.installDir: "bin"

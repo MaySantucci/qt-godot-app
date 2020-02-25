@@ -1,6 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
+#include <QProcess>
+
+#include "gameprocess.h"
 #include "scoremodel.h"
 
 int main(int argc, char *argv[])
@@ -12,6 +15,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     qmlRegisterType<ScoreModel>("MyModel", 1, 0, "ScoreModel");
 
+    qmlRegisterType<GameProcess>("GameProcess", 1, 0, "GameProcess");
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,
