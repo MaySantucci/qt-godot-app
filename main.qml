@@ -16,6 +16,7 @@ Window {
     }
 
     Button {
+        anchors.centerIn: parent
         text: qsTr("start")
         onClicked: game.startGame()
     }
