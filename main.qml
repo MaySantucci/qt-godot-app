@@ -3,7 +3,7 @@ import QtQuick.Window 2.14
 import QtQuick.Controls 2.14
 
 import MyModel 1.0
-import GameProcess 1.0
+import Game 1.0
 
 Window {
     visible: true
@@ -11,13 +11,9 @@ Window {
     height: 760
     title: qsTr("Hello World")
 
-    GameProcess {
-        id: game
-    }
-
     Button {
         anchors.centerIn: parent
         text: qsTr("start")
-        onClicked: game.startGame()
+        onClicked: GameProcess.start()
     }
 }

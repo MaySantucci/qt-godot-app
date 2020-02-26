@@ -10,7 +10,7 @@ GameProcess::~GameProcess()
 {
     m_process->deleteLater();
 }
-void GameProcess::startGame()
+void GameProcess::start()
 {
     auto res = m_process->startDetached("my_counter.exe");
     qDebug() << "Process start correctly: " << res;

@@ -10,7 +10,7 @@ class GameProcess : public QObject
 public:
     explicit GameProcess(QObject *parent = nullptr);
     ~GameProcess();
-    Q_INVOKABLE void startGame();
+    Q_INVOKABLE void start();
 
 private:
     QProcess *m_process;

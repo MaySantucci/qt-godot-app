@@ -6,6 +6,14 @@
 #include "gameprocess.h"
 #include "scoremodel.h"
 
+static QObject* game_process_singletontype_provider(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(scriptEngine)
+    Q_UNUSED(engine)
+    auto game = new GameProcess();
+    return game;
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -15,7 +23,10 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     qmlRegisterType<ScoreModel>("MyModel", 1, 0, "ScoreModel");
 
-    qmlRegisterType<GameProcess>("GameProcess", 1, 0, "GameProcess");
+    qmlRegisterSingletonType<GameProcess>(
+        "Game", 1, 0, "GameProcess",
+        game_process_singletontype_provider);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,
