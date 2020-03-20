@@ -4,6 +4,7 @@ import QtQuick.Controls 2.14
 
 import MyModel 1.0
 import Game 1.0
+import UdpSocket 1.0
 
 Window {
     visible: true
@@ -14,6 +15,6 @@ Window {
     Button {
         anchors.centerIn: parent
         text: qsTr("start")
-        onClicked: GameProcess.start()
+        onClicked: UdpSocket.initSocket();
     }
 }

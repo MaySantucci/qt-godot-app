@@ -2,6 +2,7 @@ import qbs
 
 Application {
     Depends { name: "Qt.quick" }
+    Depends { name: "Qt.network"}
 
     // Additional import path used to resolve QML modules in Qt Creator's code model
     property pathList qmlImportPaths: []
@@ -29,6 +30,8 @@ Application {
         "qml.qrc",
         "scoremodel.cpp",
         "scoremodel.h",
+        "udpsocket.cpp",
+        "udpsocket.h",
     ]
 
     Group {     // Properties for the produced executable
